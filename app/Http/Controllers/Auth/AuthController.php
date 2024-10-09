@@ -25,7 +25,7 @@ class AuthController extends Controller
         }
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            toast('Selamat datang admin!', 'sucess');
+            toast('Selamat datang admin!', 'success');
             return redirect()->route('admin.dashboard');
         }elseif (Auth::attempt(['email' => $request ->email,'password' => $request->password])) {
             toast('Selamat Datang!','success');
@@ -83,5 +83,5 @@ class AuthController extends Controller
             return redirect()->back();
         }
     }
-    }
+ }
 
